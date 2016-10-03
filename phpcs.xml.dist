@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<ruleset name="project-name">
+    <description>Project Name</description>
+    <rule ref="./vendor/mvlabs/coding-standard"/>
+</ruleset>

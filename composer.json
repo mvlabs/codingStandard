@@ -1,0 +1,10 @@
+{
+  "name": "mvlabs/coding-standard",
+  "description": "MVLabs coding standard for php-cs",
+  "authors": [
+    {
+      "name": "Andrea Cadorin",
+      "email": "a.cadorin@mvlabs.it"
+    }
+  ]
+}
