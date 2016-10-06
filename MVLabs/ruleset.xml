@@ -7,10 +7,19 @@
 
  <!-- 2.1 Basic Coding Standard -->
 
- <!-- Include the whole PSR-1 standard -->
+ <!-- Include the PSR-1 standard -->
  <rule ref="PSR1">
   <!--exclude side effect to allow declare(strict_types=1);-->
   <exclude name="PSR1.Files.SideEffects.FoundWithSymbols"/>
+ </rule>
+ <!-- Include the PSR-2 standard -->
+ <rule ref="PSR2">
+  <!--exclude Overwritten sniffer-->
+  <exclude name="Squiz.Functions.MultiLineFunctionDeclaration.SpaceBeforeOpenBrace"/>
+  <exclude name="Squiz.Functions.MultiLineFunctionDeclaration"/>
+  <exclude name="Squiz.Functions.FunctionDeclaration"/>
+  <!--allow multiple classes in one use declaration-->
+  <exclude name="PSR2.Namespaces.UseDeclaration.MultipleDeclarations"/>
  </rule>
 
  <!-- 2.2 Files -->

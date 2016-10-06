@@ -5,11 +5,12 @@ This is a custom sniff for [PHP_CodeSniffer](http://pear.php.net/PHP_CodeSniffer
 - [Prerequisities](#prerequisities)
 - [Install](#install)
 - [Usage](#usage)
+- [Sniffers](#Sniffers)
 
 
 ### Prerequisites
 
-[PHP_CodeSniffer](http://pear.php.net/PHP_CodeSniffer) must be installed with the default "standards".
+PHP version 5.1.2 or greater.
 
 ## Install
 
@@ -17,7 +18,7 @@ Add this repository to your project composer.json:
 ~~~~
 "repositories": [
         {
-            "url": "https://git.mvlabs.it/andrea/coding-standard.git",
+            "url": "https://git.mvlabs.it/internals/coding-standard.git",
             "type": "git"
         }
     ]
@@ -41,5 +42,20 @@ In PHP Storm you should go in `File -> Settings -> Editor -> Inspections -> PHP 
 from the dropdown menu select Custom and then point to the phpcs.xml file in your project.
 
 
+## Sniffers
+`MultiLineDeclarationSniffer`:
 
+This sniffer do everything the Squiz Sniffer with the same name does, but it support the return type of PHP 7 in a multiline
+function declaration, with the following syntax:
 
+````
+    private function functionName(
+        string $param1,
+        string $param2
+    ): string
+    {
+        //function body
+    }
+````
+so if the multiline function declaration has a return type, there must be no space between the closing
+parenthesis and the colon followed by a single space the return type and a new line with the body function.

@@ -1,15 +1,6 @@
 <?php
 /**
  * MVLabs_Sniffs_Functions_MultiLineFunctionDeclarationSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
  */
 
 if (class_exists('PEAR_Sniffs_Functions_FunctionDeclarationSniff', true) === false) {
@@ -22,13 +13,6 @@ if (class_exists('PEAR_Sniffs_Functions_FunctionDeclarationSniff', true) === fal
  *
  * Ensure single and multi-line function declarations are defined correctly.
  *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: 1.5.5
- * @link      http://pear.php.net/package/PHP_CodeSniffer
  */
 class MVLabs_Sniffs_Functions_MultiLineFunctionDeclarationSniff extends PEAR_Sniffs_Functions_FunctionDeclarationSniff
 {
@@ -51,6 +35,7 @@ class MVLabs_Sniffs_Functions_MultiLineFunctionDeclarationSniff extends PEAR_Sni
         // We need to work out how far indented the function
         // declaration itself is, so we can work out how far to
         // indent parameters.
+        $this->processMultiLineDeclaration($phpcsFile, $stackPtr, $tokens);
         $functionIndent = 0;
         for ($i = ($stackPtr - 1); $i >= 0; $i--) {
             if ($tokens[$i]['line'] !== $tokens[$stackPtr]['line']) {
