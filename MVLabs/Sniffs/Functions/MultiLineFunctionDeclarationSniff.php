@@ -35,7 +35,7 @@ class MVLabs_Sniffs_Functions_MultiLineFunctionDeclarationSniff extends PEAR_Sni
         // We need to work out how far indented the function
         // declaration itself is, so we can work out how far to
         // indent parameters.
-        $this->processMultiLineDeclaration($phpcsFile, $stackPtr, $tokens);
+        parent::processMultiLineDeclaration($phpcsFile, $stackPtr, $tokens);
         $functionIndent = 0;
         for ($i = ($stackPtr - 1); $i >= 0; $i--) {
             if ($tokens[$i]['line'] !== $tokens[$stackPtr]['line']) {

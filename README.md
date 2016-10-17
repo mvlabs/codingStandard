@@ -45,7 +45,7 @@ from the dropdown menu select Custom and then point to the phpcs.xml file in you
 ## Sniffers
 `MultiLineDeclarationSniffer`:
 
-This sniffer do everything the Squiz Sniffer with the same name does, but it support the return type of PHP 7 in a multiline
+This sniffer do everything the Squiz Sniffer with the same name does, but it supports the return type of PHP 7 in a multiline
 function declaration, with the following syntax:
 
 ````
@@ -57,5 +57,14 @@ function declaration, with the following syntax:
         //function body
     }
 ````
-so if the multiline function declaration has a return type, there must be no space between the closing
-parenthesis and the colon followed by a single space the return type and a new line with the body function.
+If the multiline function declaration has a return type:
+1. The closing parenthesis of the arguments must be on a new line
+2. There must be no space between the closing parenthesis and the colon 
+3. There must be a single space between the colon and the return type
+4. There must be a new line between the return type and the opening curly brace of the body function declaration
+
+
+`FunctionDeclarationSniff`:
+
+As the previous one, this do everything the Squiz Sniffer does, but it allows for method names to be called new()
+without giving a warning.
