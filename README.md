@@ -26,7 +26,7 @@ Add this repository to your project composer.json:
 
 require the package in your dev dependencies:
 ~~~~
-php composer-phar require --dev mvlabs/coding-standard:dev-master
+php composer.phar require --dev mvlabs/coding-standard:dev-master
 ~~~~
 
 
@@ -58,6 +58,7 @@ function declaration, with the following syntax:
     }
 ````
 If the multiline function declaration has a return type:
+
 1. The closing parenthesis of the arguments must be on a new line
 2. There must be no space between the closing parenthesis and the colon 
 3. There must be a single space between the colon and the return type
